@@ -1,0 +1,418 @@
+[
+  {
+    "backcolor": "#ffffff",
+    "name": "Kyria-QWERTY",
+    "author": "Neville Palmer",
+    "radii": "40px",
+    "plate": true
+  },
+  [
+    {
+      "y": 0.25,
+      "x": 3,
+      "t": "#000000\n#0000aa\n#00aa00\n#aa0000\n\n\n\n#00aa00",
+      "fa": [
+        5
+      ]
+    },
+    "E\n<i class='fa fa-arrow-up'></i>\n\n3",
+    {
+      "x": 9
+    },
+    "I\n8\nF8\n8"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2
+    },
+    "W\nHm\n\n2",
+    {
+      "x": 1
+    },
+    "R\nEn\n\n4",
+    {
+      "x": 7
+    },
+    "U\n7\nF7\n7",
+    {
+      "x": 1
+    },
+    "O\n9\nF9\n9"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5
+    },
+    "T\n<i class='kb kb-Multimedia-Volume-Up-2'></i>\n\n5",
+    {
+      "x": 5,
+      "fa": [
+        5,
+        0,
+        2
+      ]
+    },
+    "Y\n6\nQWT\n/"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 7,
+      "fa": [
+        5,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "w": 3,
+      "h": 1.5
+    },
+    "\nNav/Sym\n\nNum/Sym\nModifier when Held\n\nQWERTY\nFunction\nLEGEND"
+  ],
+  [
+    {
+      "y": -0.75,
+      "fa": [
+        5,
+        0,
+        2,
+        5
+      ]
+    },
+    "<i class='kb kb-Tab-1'></i>\n\n\n`",
+    {
+      "fa": [
+        5
+      ]
+    },
+    "Q\nPU\n\n1",
+    {
+      "x": 13
+    },
+    "P\n0\nF12\n-",
+    "<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>\n<i class='kb kb-Unicode-DeleteRight-Big'></i>\n\n<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3
+    },
+    "D\n<i class='fa fa-arrow-down'></i>\n\n#\nCtrl",
+    {
+      "x": 9,
+      "fa": [
+        5,
+        4
+      ]
+    },
+    "K\n*\nF5\n5\nCtrl"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "fa": [
+        5
+      ]
+    },
+    "S\n<i class='fa fa-arrow-left'></i>\n\n@\nAlt",
+    {
+      "x": 1,
+      "n": true
+    },
+    "F\n<i class='fa fa-arrow-right'></i>\n\n$\nShift",
+    {
+      "x": 7,
+      "n": true
+    },
+    "J\n&\nF4\n4\nShift",
+    {
+      "x": 1
+    },
+    "L\n(\nF6\n6\nAlt"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5
+    },
+    "G\n<i class='kb kb-Multimedia-Volume-Down-2'></i>\n\n%",
+    {
+      "x": 5,
+      "fa": [
+        5,
+        0,
+        2
+      ]
+    },
+    "H\n^\nDvk\n*"
+  ],
+  [
+    {
+      "y": -0.625,
+      "fa": [
+        4,
+        0,
+        2,
+        5,
+        4
+      ]
+    },
+    "Esc\n\n\n~\nCtrl",
+    {
+      "fa": [
+        5
+      ]
+    },
+    "A\nPD\n\n!\nGUI",
+    {
+      "x": 13
+    },
+    ";:\n)\nF11\n+\nGUI",
+    "' \"\n-_\n\nIns\nCtrl"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3
+    },
+    "C\n<i class='kb kb-Multimedia-Play'></i>\n\n=",
+    {
+      "x": 9
+    },
+    ",<\n|\nF2\n2"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2
+    },
+    "X\n<i class='kb kb-Multimedia-Rewind-Start'></i>\n\n+",
+    {
+      "x": 1
+    },
+    "V\n<i class='kb kb-Multimedia-FastForward-End'></i>\n\n{",
+    {
+      "x": 7
+    },
+    "M\n]\nF1\n1",
+    {
+      "x": 1
+    },
+    ".>\n\\\nF3\n3"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5
+    },
+    "B\n<i class='kb kb-Multimedia-Mute-2'></i>\n\n}",
+    {
+      "x": 5,
+      "fa": [
+        5,
+        0,
+        2
+      ]
+    },
+    "N\n[\nCmk\n0"
+  ],
+  [
+    {
+      "y": -0.625,
+      "fa": [
+        4
+      ]
+    },
+    "Shift\n\n\n\nShift",
+    {
+      "fa": [
+        5
+      ]
+    },
+    "Z\nBrk\n\n_",
+    {
+      "x": 13
+    },
+    "/?\n/?\nF10\n.",
+    {
+      "fa": [
+        4
+      ]
+    },
+    "Shift\n\n\nPtSc\nShift"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 2.5,
+      "t": "#000000",
+      "a": 5,
+      "fa": [
+        7
+      ]
+    },
+    "<i class='kb kb-logo-linux-tux'></i>\n\n\n\nGUI",
+    {
+      "x": 10,
+      "t": "#000000\n#0000aa\n#00aa00\n#aa0000\n\n\n\n#00aa00",
+      "a": 4,
+      "f": 3
+    },
+    "<i class='fa fa-bars'></i>\n\n\n\nMenu"
+  ],
+  [
+    {
+      "rx": 4,
+      "ry": 8.175,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "f": 3
+    },
+    "Alt\n\n\n\nAlt"
+  ],
+  [
+    {
+      "rx": 13,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#000000",
+      "a": 5,
+      "fa": [
+        5
+      ]
+    },
+    "<i class='kb kb-Unicode-Option-1'></i>\n\n\n\nAltGr"
+  ],
+  [
+    {
+      "r": 15,
+      "rx": 4,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#0000aa\n#0000aa\n\n\n\n\n#0000aa",
+      "fa": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "NAV/\nSYM\n\n\nNAV"
+  ],
+  [
+    {
+      "r": 30,
+      "y": -2,
+      "x": -0.5,
+      "t": "#000000\n#0000aa\n#00aa00\n#aa0000\n\n\n\n#00aa00",
+      "a": 4,
+      "f": 3
+    },
+    "CapLk\n\n\nNumLk"
+  ],
+  [
+    {
+      "x": -0.5,
+      "t": "#000000",
+      "a": 7,
+      "f": 3
+    },
+    "Space"
+  ],
+  [
+    {
+      "r": 45,
+      "y": -2,
+      "x": -0.5
+    },
+    ""
+  ],
+  [
+    {
+      "x": -0.5,
+      "fa": [
+        6
+      ]
+    },
+    "<i class='kb kb-Return-2'></i>"
+  ],
+  [
+    {
+      "r": -45,
+      "rx": 13,
+      "y": -5.675000000000001,
+      "x": -0.5
+    },
+    ""
+  ],
+  [
+    {
+      "x": -0.5,
+      "fa": [
+        5
+      ]
+    },
+    "<i class='kb kb-Return-2'></i>"
+  ],
+  [
+    {
+      "r": -30,
+      "y": -2,
+      "x": -0.5,
+      "t": "#000000\n#0000aa\n#00aa00\n#aa0000\n\n\n\n#00aa00\n#00aa00",
+      "a": 4,
+      "fa": [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ]
+    },
+    "\n\n\nScrLk\n\n\n\n\nF-Key"
+  ],
+  [
+    {
+      "x": -0.5,
+      "t": "#000000",
+      "a": 7,
+      "f": 3
+    },
+    "Space"
+  ],
+  [
+    {
+      "r": -15,
+      "y": -1,
+      "x": -0.5,
+      "t": "#aa0000\n#aa0000\n\n\n\n\n#aa0000",
+      "a": 5,
+      "fa": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "NUM/\nSYM\n\n\nNUM"
+  ]
+]
