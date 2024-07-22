@@ -76,7 +76,7 @@ enum layers {
 #define GUI_O    MT(MOD_RGUI, KC_O)
 
 // For NUMNAV layer
-#define GUI_AST  MT(MOD_LGUI, KC_PAST)
+#define GUI_SLS  MT(MOD_LGUI, KC_PSLS)
 #define ALT_P4   MT(MOD_LALT, KC_P4)
 #define CTL_P5   MT(MOD_LCTL, KC_P5)
 #define SFT_P6   MT(MOD_LSFT, KC_P6)
@@ -87,7 +87,7 @@ enum layers {
 
 // For SYMBOL layer
 #define GUI_TLD MT(MOD_LGUI, KC_TILD)
-#define ALT_DLR MT(MOD_LALT, KC_DLR)
+#define ALT_HSH MT(MOD_LALT, KC_HASH)
 #define CTL_PRC MT(MOD_LCTL, KC_PERC)
 #define SFT_CRC MT(MOD_LSFT, KC_CIRC)
 #define SFT_RBR MT(MOD_LSFT, KC_RBRC)
@@ -102,21 +102,21 @@ enum layers {
 // Intercepts non-basic keycodes for use with mod-tap.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case GUI_AST:
+        case GUI_SLS:
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_PAST); // Send KC_ASTR on tap
+                tap_code16(KC_PSLS); // Send KC_PSLS on tap
                 return false;        // Return false to ignore further processing of key
             }
             break;
         case GUI_TLD:
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_AT); // Send KC_AT on tap
+                tap_code16(KC_TILD); // Send KC_TILD on tap
                 return false;        // Return false to ignore further processing of key
             }
             break;
-        case ALT_DLR:
+        case ALT_HSH:
             if (record->tap.count && record->event.pressed) {
-                tap_code16(KC_DLR); // Send KC_DLR on tap
+                tap_code16(KC_HASH); // Send KC_HASH on tap
                 return false;        // Return false to ignore further processing of key
             }
             break;
@@ -217,9 +217,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * NUMNAV Layer: Left Numpad - Right Navigation
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |   /  |   7  |   8  |   9  |   -  |                              | Break|M Prev|M Play|M Next| VolUp|        |
+ * |        |   *  |   7  |   8  |   9  |   +  |                              | Break|M Prev|M Play|M Next| VolUp|        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |GUI/ *| Alt/4|Ctrl/5|Shft/6|   +  |                              |   ←  |Shft/↓|Ctrl/↑| Alt/→| GUI/ | Insert |
+ * |        |GUI/ /| Alt/4|Ctrl/5|Shft/6|   -  |                              |   ←  |Shft/↓|Ctrl/↑| Alt/→| GUI/ | Insert |
  * |        |      |      |      |      |      |                              |      |      |      |      | VolDn|        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |   0  |   1  |   2  |   3  |   .  |      |ScrLck|  |NumLck|      | Home | PgDn | PgUp |  End |VolMut| PrtSc  |
@@ -229,8 +229,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NUMNAV] = LAYOUT(
-      _______, KC_PSLS,  KC_P7 ,  KC_P8 ,  KC_P9 , KC_PMNS,                                       KC_BRK ,KC_MPRV, KC_MPLY , KC_MNXT, KC_VOLU, _______,
-      _______, GUI_AST, ALT_P4 , CTL_P5 , SFT_P6 , KC_PPLS,                                       KC_LEFT,SFT_DWN,  CTL_UP , ALT_RGT, GUI_VLD,  KC_INS,
+      _______, KC_PAST,  KC_P7 ,  KC_P8 ,  KC_P9 , KC_PPLS,                                       KC_BRK ,KC_MPRV, KC_MPLY , KC_MNXT, KC_VOLU, _______,
+      _______, GUI_SLS, ALT_P4 , CTL_P5 , SFT_P6 , KC_PMNS,                                       KC_LEFT,SFT_DWN,  CTL_UP , ALT_RGT, GUI_VLD,  KC_INS,
       _______,  KC_P0 ,  KC_P1 ,  KC_P2 ,  KC_P3 , KC_PDOT, _______, KC_SCRL,   KC_NUM , _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_MUTE, KC_PSCR,
                                  _______, _______, _______, _______, CTL_DEL,   CTL_BSP, _______, _______, _______, _______
     ),
@@ -239,40 +239,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * SYMBOL Layer: Symbols
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |    `   |   `  |   &  |   *  |      |   _  |                              |      |      |      |      |      |        |
+ * |    `   |   `  |   &  |   *  |      |   +  |                              |      |      |      |      |   "  |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |    ~   | GUI/~| Alt/#|Ctrl/%|Shft/^|   =  |                              |   [  |Shft/]|Ctrl/(| Alt/)|GUI/'"|        |
+ * |    ~   | GUI/~| Alt/#|Ctrl/%|Shft/^|   -  |                              |   [  |Shft/]|Ctrl/(| Alt/)|GUI/' |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |   _  |   !  |   @  |   $  |      |      |ScrLck|  |NumLck|      |      |  |   |  {   |  }   |  \   | PrtSc  |
+ * |        |   _  |   !  |   @  |   $  |   =  |      |ScrLck|  |NumLck|      |      |  |   |  {   |  }   |  \   |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      | Ctrl/|  | Ctrl/|      |      |      |      |
  *                        |      |      |      |      | Del  |  | BkSpc|      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYMBOL] = LAYOUT(
-       KC_GRV,  KC_GRV, KC_AMPR, KC_ASTR, XXXXXXX, KC_UNDS,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
-      KC_TILD, GUI_TLD, ALT_DLR, CTL_PRC, SFT_CRC,  KC_EQL,                                       KC_LBRC, SFT_RBR, CTL_LPN, ALT_RPN, GUI_QUT, _______,
-      _______, KC_UNDS, KC_EXLM,  KC_AT , KC_HASH, XXXXXXX, _______, KC_SCRL,   KC_NUM , _______, KC_PIPE, KC_LCBR, KC_RCBR, KC_BSLS, KC_BSLS, _______,
+       KC_GRV,  KC_GRV, KC_AMPR, KC_ASTR, XXXXXXX, KC_PLUS,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DQUO, _______,
+      KC_TILD, GUI_TLD, ALT_HSH, CTL_PRC, SFT_CRC, KC_MINS,                                       KC_LBRC, SFT_RBR, CTL_LPN, ALT_RPN, GUI_QUT, _______,
+      _______, KC_UNDS, KC_EXLM,  KC_AT ,  KC_DLR,  KC_EQL, _______, KC_SCRL,   KC_NUM , _______, XXXXXXX, KC_PIPE, KC_LCBR, KC_RCBR, KC_BSLS, _______,
                                  _______, _______, _______, _______, CTL_DEL,   CTL_BSP, _______, _______, _______, _______
     ),
 
 /*
  * Function Layer: Function keys
  *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              |QWERTY|  F7  |  F8  |  F9  | F12  |        |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        | Shift| Ctrl |  Alt |  GUI |      |                              |Dvorak|  F4  |  F5  |  F6  |  F11 |        |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |      |      |Colmak|  F1  |  F2  |  F3  |  F10 |        |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        `----------------------------------'  `----------------------------------'
+ * ,------------------------------------------.                              ,-------------------------------------------.
+ * |       | PrtSc |  F7  |  F8  |  F9  | F10 |                              |QWERTY|      |      |      |      |        |
+ * |-------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |       |Insert|  F4  |  F5  |  F6  |  F11 |                              |Dvorak| Shift| Ctrl |  Alt |  GUI |        |
+ * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |       |      |  F1  |  F2  |  F3  |  F12 |      |      |  |      |      |Colmak|      |      |      |      |        |
+ * `---------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                       |      |      |      |      |      |  |      |      |      |      |      |
+ *                       |      |      |      |      |      |  |      |      |      |      |      |
+ *                       `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-      _______, _______,  KC_F7 ,  KC_F8 ,  KC_F9 ,  KC_F10,                                       QWERTY , _______, _______, _______, _______, _______,
-      _______, _______,  KC_F4 ,  KC_F5 ,  KC_F6 ,  KC_F11,                                       DVORAK , KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, _______,
+      _______, KC_PSCR,  KC_F7 ,  KC_F8 ,  KC_F9 ,  KC_F10,                                       QWERTY , _______, _______, _______, _______, _______,
+      _______,  KC_INS,  KC_F4 ,  KC_F5 ,  KC_F6 ,  KC_F11,                                       DVORAK , KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, _______,
       _______, _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F12, _______, _______,   _______, _______, COLEMAK, _______, _______, _______, _______, _______,
                                  _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______
     ),
