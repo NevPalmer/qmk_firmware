@@ -1,6 +1,6 @@
 # Nev's Kyria Keymap
 
-![KLE render of the default Kyria keymap with QWERTY as the base layer. Layers are shown in sublegends.](./kyria-qwerty-nevp.png)
+![KLE render of the default Kyria keymap with QWERTY as the base layer. Layers are shown in sublegends.](./kyria-qwerty-nevp-shiftright.png)
 
 The default keymap contains 6 layers which allows it to include all keys found on an ANSI layout TKL keyboard plus media keys.
 Hardware features of the Kyria such as OLEDs, rotary encoders and underglow are also supported.
@@ -23,43 +23,43 @@ For the rest of this write-up, the base layer will be assumed to be QWERTY and w
 ```text
 Base Layer: QWERTY
 ,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |    =   |
+|  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |      |   Y  |   U  |   I  |   O  |    P   |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|  Esc   | GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |   H  |Shft/J|Ctrl/K| Alt/L|GUI/;:|  ' "   |
+|  Esc   | GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |      |   H  |Shft/J|Ctrl/K| Alt/L| GUI/;: |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|_/LShift|   Z  |   X  |   C  |   V  |   B  |NAVNUM|F-keys|  |CapsLk|NAVNUM|   N  |   M  | ,  < | . >  | /  ? |-/RShift|
+|_/LShift|   Z  |   X  |   C  |   V  |   B  |  Alt |F-keys|  |CapsLk| AltGr|      |   N  |   M  | ,  < | . >  |  /  ?  |
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       | Menu | GUI/ | Alt/ | SYM/ | Ctrl/|  | Ctrl/| SYM/ |AltGr/| GUI/ | Menu |
-                       |      | Space| Esc  | Enter| BkSpc|  | Del  | Space|  Tab | Enter|      |
+                       | Menu | Ctrl |NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV| Ctrl | Menu |
+                       |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
                        `----------------------------------'  `----------------------------------'
 ```
 
 ```text
 Base Layer: Dvorak
 ,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |   F  |   G  |   C  |   R  |   L  |    =   |
+|  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |      |   F  |   G  |   C  |   R  |   L    |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|  Esc   | GUI/A| Alt/O|Ctrl/E|Shft/U|   I  |                              |   D  |Shft/H|Ctrl/T| Alt/N| GUI/S|  ' "   |
+|  Esc   | GUI/A| Alt/O|Ctrl/E|Shft/U|   I  |                              |      |   D  |Shft/H|Ctrl/T| Alt/N|  GUI/S |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|_/LShift| ; :  |   Q  |   J  |   K  |   X  |NAVNUM|F-keys|  |CapsLk|NAVNUM|   B  |   M  |   W  |   V  |   Z  |-/RShift|
+|_/LShift| ; :  |   Q  |   J  |   K  |   X  |  Alt |F-keys|  |CapsLk| AltGr|      |   B  |   M  |   W  |   V  |    Z   |
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       | Menu | GUI/ | Alt/ | SYM/ | Ctrl/|  | Ctrl/| SYM/ |AltGr/| GUI/ | Menu |
-                       |      | Space| Esc  | Enter| BkSpc|  | Del  | Space|  Tab | Enter|      |
-                       `----------------------------------'  `----------------------------------'
+                       | Menu | Ctrl |NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV| Ctrl | Menu |
+                       |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
+                     `----------------------------------'  `----------------------------------'
 ```
 
 ```text
 Base Layer: Colemak DH
 ,-------------------------------------------.                              ,-------------------------------------------.
-|  Tab   |   Q  |   W  |   F  |   P  |   B  |                              |   J  |   L  |   U  |   Y  | ;  : |    =   |
+|  Tab   |   Q  |   W  |   F  |   P  |   B  |                              |      |   J  |   L  |   U  |   Y  |  ;  :  |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|  Esc   | GUI/A| Alt/R|Ctrl/S|Shft/T|   G  |                              |   M  |Shft/N|Ctrl/E| Alt/I| GUI/O|  ' "   |
+|  Esc   | GUI/A| Alt/R|Ctrl/S|Shft/T|   G  |                              |      |   M  |Shft/N|Ctrl/E| Alt/I|  GUI/O |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|_/LShift|   Z  |   X  |   C  |   D  |   V  |NAVNUM|F-keys|  |CapsLk|NAVNUM|   K  |   H  | ,  < | . >  | /  ? |-/RShift|
+|_/LShift|   Z  |   X  |   C  |   D  |   V  |  Alt |F-keys|  |CapsLk| AltGr|      |   K  |   H  | ,  < | . >  |  /  ?  |
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       | Menu | GUI/ | Alt/ | SYM/ | Ctrl/|  | Ctrl/| SYM/ |AltGr/| GUI/ | Menu |
-                       |      | Space| Esc  | Enter| BkSpc|  | Del  | Space|  Tab | Enter|      |
-                       `----------------------------------'  `----------------------------------'
+                       | Menu | Ctrl |NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV| Ctrl | Menu |
+                       |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
+                      `----------------------------------'  `----------------------------------'
 ```
 
 ## Numpad, Navigation and Media layer
@@ -67,12 +67,12 @@ Base Layer: Colemak DH
 ```text
 NUMNAV Layer: Left Numpad - Right Navigation
 ,-------------------------------------------.                              ,-------------------------------------------.
-|        |   *  |   7  |   8  |   9  |   +  |                              | Break|M Prev|M Play|M Next| VolUp|        |
+|        |   *  |   7  |   8  |   9  |   +  |                              |      | Break|M Prev|M Play|M Next| VolUp  |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|        |GUI/ /| Alt/4|Ctrl/5|Shft/6|   -  |                              |   ←  |Shft/↓|Ctrl/↑| Alt/→| GUI/ | Insert |
-|        |      |      |      |      |      |                              |      |      |      |      | VolDn|        |
+|        |GUI/ /| Alt/4|Ctrl/5|Shft/6|   -  |                              |      |   ←  |Shft/↓|Ctrl/↑| Alt/→|  GUI/  |
+|        |      |      |      |      |      |                              |      |      |      |      |      |  VolDn |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|        |   0  |   1  |   2  |   3  |   .  |      |ScrLck|  |NumLck|      | Home | PgDn | PgUp |  End |VolMut| PrtSc  |
+|        |   0  |   1  |   2  |   3  |   .  |      |ScrLck|  |NumLck|      |      | Home | PgDn | PgUp |  End | VolMut |
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
                        |      |      |      |      | Ctrl/|  | Ctrl/|      |      |      |      |
                        |      |      |      |      | Del  |  | BkSpc|      |      |      |      |
@@ -84,15 +84,15 @@ NUMNAV Layer: Left Numpad - Right Navigation
 ```text
 SYMBOL Layer: Symbols
 ,-------------------------------------------.                              ,-------------------------------------------.
-|    `   |   `  |   &  |   *  |      |   +  |                              |      |      |      |      |   "  |        |
+|    `   |   `  |   &  |   *  |      |   +  |                              |      |      |      |   "  |   '  |        |
 |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|    ~   | GUI/~| Alt/#|Ctrl/%|Shft/^|   -  |                              |   [  |Shft/]|Ctrl/(| Alt/)|GUI/' |        |
+|    ~   | GUI/~| Alt/#|Ctrl/%|Shft/^|   -  |                              |      |   [  |Shft/]|Ctrl/(| Alt/)| GUI/'  |
 |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-|        |   _  |   !  |   @  |   $  |   =  |      |ScrLck|  |NumLck|      |      |  |   |  {   |  }   |  \   |        |
+|        |   _  |   !  |   @  |   $  |   =  |      |ScrLck|  |NumLck|      |      |      |  |   |  {   |  }   |   \    |
 `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
                        |      |      |      |      | Ctrl/|  | Ctrl/|      |      |      |      |
                        |      |      |      |      | Del  |  | BkSpc|      |      |      |      |
-                       `----------------------------------'  `----------------------------------'
+                    `----------------------------------'  `----------------------------------'
 ```
 
 ## Function layer
@@ -102,12 +102,12 @@ Function Layer: Function keys
 ,-------------------------------------------.                              ,-------------------------------------------.
 |       | PrtSc |  F7  |  F8  |  F9  | F10 |                              |QWERTY|      |      |      |      |        |
 |-------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-|       |Insert|  F4  |  F5  |  F6  |  F11 |                              |Dvorak| Shift| Ctrl |  Alt |  GUI |        |
+|       |Insert|  F4  |  F5  |  F6  |  F11 |                              |Dvorak|      | Shift| Ctrl |  Alt |   GUI  |
 |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
 |       |      |  F1  |  F2  |  F3  |  F12 |      |      |  |      |      |Colmak|      |      |      |      |        |
-`----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-                       |      |      |      |      |      |  |      |      |      |      |      |
-                       |      |      |      |      |      |  |      |      |      |      |      |
+`---------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+                      |      |      |      |      |      |  |      |      |      |      |      |
+                      |      |      |      |      |      |  |      |      |      |      |      |
                        `----------------------------------'  `----------------------------------'
 ```
 
