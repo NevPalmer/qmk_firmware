@@ -28,6 +28,6 @@
 // #define SPLIT_USB_DETECT
 // #define NO_USB_STARTUP_CHECK
 
-#    define TAPPING_TOGGLE 2
-#    define TAPPING_TERM 300
-
+#   define TAPPING_TOGGLE 2
+#   define TAPPING_TERM 300
+#   define PERMISSIVE_HOLD
