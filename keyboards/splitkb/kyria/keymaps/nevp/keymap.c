@@ -17,8 +17,6 @@
 
 enum layers {
     _QWERTY = 0,
-    _DVORAK,
-    _COLEMAK_DH,
     _NUMNAV,
     _SYMBOL,
     _FUNCTION,
@@ -26,8 +24,6 @@ enum layers {
 
 // Aliases for readability
 #define QWERTY   DF(_QWERTY)
-#define COLEMAK  DF(_COLEMAK_DH)
-#define DVORAK   DF(_DVORAK)
 
 #define SYMBOL   TT(_SYMBOL)
 #define NUMNAV   TT(_NUMNAV)
@@ -51,24 +47,6 @@ enum layers {
 #define CTL_K    MT(MOD_RCTL, KC_K)
 #define ALT_L    MT(MOD_LALT, KC_L)
 #define GUI_SC   MT(MOD_RGUI, KC_SCLN)
-
-// For Dvorak layer
-#define ALT_O    MT(MOD_LALT, KC_O)
-#define LCTL_E   MT(MOD_LCTL, KC_E)
-#define SFT_U    MT(MOD_LSFT, KC_U)
-#define SFT_H    MT(MOD_RSFT, KC_H)
-#define CNTL_T   MT(MOD_RCTL, KC_T)
-#define ALT_N    MT(MOD_LALT, KC_N)
-#define GUI_S    MT(MOD_RGUI, KC_S)
-
-// For Colemak layer
-#define ALT_R    MT(MOD_LALT, KC_R)
-#define CTL_S    MT(MOD_LCTL, KC_S)
-#define SHFT_T   MT(MOD_LSFT, KC_T)
-#define SFT_N    MT(MOD_RSFT, KC_N)
-#define RCTL_E   MT(MOD_RCTL, KC_E)
-#define ALT_I    MT(MOD_LALT, KC_I)
-#define GUI_O    MT(MOD_RGUI, KC_O)
 
 // For NUMNAV layer
 #define GUI_SLS  MT(MOD_LGUI, KC_PSLS)
@@ -162,48 +140,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
      KC_TAB  ,  KC_Q ,  KC_W  ,  KC_E  ,   KC_R ,   KC_T ,                                        _______,  KC_Y ,   KC_U ,  KC_I ,   KC_O ,  KC_P ,
      KC_ESC  , GUI_A , ALT_S  , CTL_D  ,  SFT_F ,   KC_G ,                                        _______,  KC_H ,  SFT_J , CTL_K ,  ALT_L ,GUI_SC ,
-     SFT_UNDS,  KC_Z ,  KC_X  ,  KC_C  ,   KC_V ,   KC_B , KC_LALT, FKEYS ,     NLK_CLK, KC_RALT, _______,  KC_N ,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH,
-                                KC_APP , KC_LCTL, NUM_BSP, SYM_SPC, KC_ENT,      KC_ENT, SYM_SPC,NUM_DEL, KC_RCTL,KC_APP
-    ),
-
-/*
- * Base Layer: Dvorak
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Tab   | ' "  | , <  | . >  |   P  |   Y  |                              |      |   F  |   G  |   C  |   R  |   L    |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |  Esc   | GUI/A| Alt/O|Ctrl/E|Shft/U|   I  |                              |      |   D  |Shft/H|Ctrl/T| Alt/N|  GUI/S |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |_/LShift| ; :  |   Q  |   J  |   K  |   X  |  Alt |F-keys|  |CapsLk| AltGr|      |   B  |   M  |   W  |   V  |    Z   |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Menu | Ctrl |NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV| Ctrl | Menu |
- *                        |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
- **                        `----------------------------------'  `----------------------------------'
- */
-    [_DVORAK] = LAYOUT(
-     KC_TAB  ,KC_QUOTE,KC_COMM,  KC_DOT,   KC_P ,   KC_Y ,                                        _______,  KC_F ,   KC_G ,  KC_C ,   KC_R ,  KC_L ,
-     KC_ESC  , GUI_A , ALT_O  , LCTL_E ,  SFT_U ,   KC_I ,                                        _______,  KC_D ,  SFT_H ,CNTL_T ,  ALT_N , GUI_S ,
-     SFT_UNDS,  KC_Z ,  KC_X  ,  KC_C  ,   KC_V ,   KC_B , KC_LALT, FKEYS ,     NLK_CLK, KC_RALT, _______,  KC_N ,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH,
-                                KC_APP , KC_LCTL, NUM_BSP, SYM_SPC, KC_ENT,      KC_ENT, SYM_SPC,NUM_DEL, KC_RCTL,KC_APP
-    ),
-
-/*
- * Base Layer: Colemak DH
- *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |  Tab   |   Q  |   W  |   F  |   P  |   B  |                              |      |   J  |   L  |   U  |   Y  |  ;  :  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |  Esc   | GUI/A| Alt/R|Ctrl/S|Shft/T|   G  |                              |      |   M  |Shft/N|Ctrl/E| Alt/I|  GUI/O |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |_/LShift|   Z  |   X  |   C  |   D  |   V  |  Alt |F-keys|  |CapsLk| AltGr|      |   K  |   H  | ,  < | . >  |  /  ?  |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | Menu | Ctrl |NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV| Ctrl | Menu |
- *                        |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
- **                        `----------------------------------'  `----------------------------------'
- */
-    [_COLEMAK_DH] = LAYOUT(
-     KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        _______,  KC_J ,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN,
-     KC_ESC  , GUI_A , ALT_R  , CTL_S  , SHFT_T ,   KC_G ,                                        _______,  KC_M ,  SFT_N ,RCTL_E ,  ALT_I , GUI_O ,
      SFT_UNDS,  KC_Z ,  KC_X  ,  KC_C  ,   KC_V ,   KC_B , KC_LALT, FKEYS ,     NLK_CLK, KC_RALT, _______,  KC_N ,   KC_M ,KC_COMM, KC_DOT ,KC_SLSH,
                                 KC_APP , KC_LCTL, NUM_BSP, SYM_SPC, KC_ENT,      KC_ENT, SYM_SPC,NUM_DEL, KC_RCTL,KC_APP
     ),
@@ -321,12 +257,6 @@ bool oled_task_user(void) {
         switch (get_highest_layer(layer_state|default_layer_state)) {
             case _QWERTY:
                 oled_write_P(PSTR("QWERTY\n"), false);
-                break;
-            case _DVORAK:
-                oled_write_P(PSTR("Dvorak\n"), false);
-                break;
-            case _COLEMAK_DH:
-                oled_write_P(PSTR("Colemak-DH\n"), false);
                 break;
             case _NUMNAV:
                 oled_write_P(PSTR("Num-Nav\n"), false);
