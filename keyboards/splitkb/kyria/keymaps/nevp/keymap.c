@@ -132,8 +132,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
  * |Shft/Esc| GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |      | Alt/H|Shft/J| GUI/K|Ctrl/L|Shft/;:|
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |  CTRL  |   Z  |   X  |   C  |   V  |   B  | NumLk|NumNav|  |NumNav|CapsLk|      |   N  |   M  | ,  < | . >  |  /  ? |
- * |        |      |      |      |      |      |      | Lock |  | Lock |      |      |      |      |      |      |       |
+ * |  CTRL  |   Z  |   X  |   C  |   V  |   B  |NumNav| NumLk|  |CapsLk|NumNav|      |   N  |   M  | ,  < | . >  |  /  ? |
+ * |        |      |      |      |      |      | Lock |      |  |      | Lock |      |      |      |      |      |       |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
  *                        | Menu |F-Keys|NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV|F-Keys| Menu |
  *                        |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
@@ -142,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT(
       KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                                   XXXXXXX,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,
      SFT_ESC,  CTL_A,  GUI_S,  SFT_D,  ALT_F,   KC_G,                                   XXXXXXX,  ALT_H,  SFT_J,  GUI_K,  CTL_L, SFT_SC,
-     KC_LCTL,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B, KC_NUM, NUMNAV,    NUMNAV,KC_CAPS,XXXXXXX,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,
+     KC_LCTL,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B, NUMNAV, KC_NUM,    KC_CAPS,NUMNAV,XXXXXXX,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,
                               KC_APP,  FKEYS,NUM_BSP,SYM_SPC, KC_ENT,    KC_ENT,SYM_SPC,NUM_DEL,  FKEYS, KC_APP
     ),
 
