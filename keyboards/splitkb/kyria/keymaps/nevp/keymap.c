@@ -171,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * SYMBOL Layer: Symbols
  *
  * ,-------------------------------------------.                              ,------------------------------------------.
- * |    `   |   `  |   &  |   *  |      |   +  |                              |      |      |      |   "  |   '  |       |
+ * |    `   |   `  |   &  |   *  |      |   +  |                              |      |      |   "  |   '  |      |       |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
  * |        |Ctrl/~| GUI/#|Shft/%| Alt/^|   -  |                              |      | Alt/[|Shft/]| GUI/(|Ctrl/)|Shft/' |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
@@ -182,7 +182,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYMBOL] = LAYOUT(
-     _______, KC_GRV,KC_AMPR,KC_ASTR,XXXXXXX,KC_PLUS,                                   _______,XXXXXXX,XXXXXXX,KC_DQUO,KC_QUOT,XXXXXXX,
+     _______, KC_GRV,KC_AMPR,KC_ASTR,XXXXXXX,KC_PLUS,                                   _______,XXXXXXX,KC_DQUO,KC_QUOT,XXXXXXX,XXXXXXX,
      _______,CTL_TLD,GUI_HSH,SFT_PRC,ALT_CRC,KC_MINS,                                   _______,ALT_LBR,SFT_RBR,GUI_LPN,CTL_RPN,KC_RSFT,
      _______,KC_UNDS,KC_EXLM, KC_AT , KC_DLR, KC_EQL,_______,_______,   _______,_______,_______,XXXXXXX,KC_PIPE,KC_LCBR,KC_RCBR,KC_BSLS,
                              _______,_______,NUM_DEL,_______,_______,   _______,_______,NUM_BSP,_______,_______
