@@ -229,6 +229,58 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     ),
 };
 
+/* LED LOCK and LAYER indicators.
+ * Repurpose SCL(D0) and SDA(D1) pins for LED indicators.
+ * Left (master) board for Layer indicators.
+ * Right(slave) board for Num and Caps Lock indicators.
+ * (Was unable to get Layers to indicate on the slave side. Even with 
+ * SPLIT_LAYER_STATE_ENABLE defined in config.h.)
+ */
+void keyboard_pre_init_user(void) {
+    gpio_set_pin_output(D0);  // initialize D0 for LED (master & slave sides)
+    gpio_set_pin_output(D1);  // initialize D1 for LED (master & slave sides)
+};
+
+layer_state_t layer_state_set_user(layer_state_t layer_state) {
+    if (is_keyboard_master()) {
+        switch (get_highest_layer(layer_state)) {
+            case _QWERTY:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _NUMNAV:
+                gpio_write_pin_high(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _SYMBOL:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _FUNCTION:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_high(D1);
+                break;
+            default:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_low(D1);
+                break;
+        }
+    }
+    return layer_state;
+}
+
+bool led_update_kb(led_t led_state) {
+    bool res = led_update_user(led_state);
+    if (!is_keyboard_master()) {
+        if(res) {
+            // gpio_write_pin sets the pin high for 1 and low for 0.
+            gpio_write_pin(D0, led_state.num_lock);
+            gpio_write_pin(D1, led_state.caps_lock);
+        }
+    }
+    return res;
+}
+
 /* The default OLED and rotary encoder code can be found at the bottom of qmk_firmware/keyboards/splitkb/kyria/rev1/rev1.c
  * These default settings can be overriden by your own settings in your keymap.c
  * For your convenience, here's a copy of those settings so that you can uncomment them if you wish to apply your own modifications.
