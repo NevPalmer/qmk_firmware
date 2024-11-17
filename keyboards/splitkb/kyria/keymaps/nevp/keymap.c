@@ -274,8 +274,8 @@ bool led_update_kb(led_t led_state) {
     if (!is_keyboard_master()) {
         if(res) {
             // gpio_write_pin sets the pin high for 1 and low for 0.
-            gpio_write_pin(D0, led_state.num_lock);
-            gpio_write_pin(D1, led_state.caps_lock);
+            gpio_write_pin(D1, led_state.num_lock);
+            gpio_write_pin(D0, led_state.caps_lock);
         }
     }
     return res;
