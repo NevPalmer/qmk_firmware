@@ -192,19 +192,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Function Layer: Function keys
  *
  * ,------------------------------------------.                              ,------------------------------------------.
- * |       |      | Home |   ↑  |  End |      |                              |      |  F1  |  F2  |  F3  |  F4  | PrtScr|
+ * |       |      | Home |   ↑  | PgUp |      |                              |      |  F1  |  F2  |  F3  |  F4  | PrtScr|
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+-------|
  * |       | Ctrl | GUI/←|Shft/↓| Alt/→|      |                              |      |Alt/F5|Sft/F6|GUI/F7|Ctl/F8|Sft/Ins|
  * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |       |      | PgDn |      | PgUp |      |      |      |  |      |      |      |  F9  |  F10 |  F11 |  F12 | ScrLk |
+ * |       |      |  End |      | PgDn |      |      |      |  |      |      |      |  F9  |  F10 |  F11 |  F12 | ScrLk |
  * `---------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
  *                       |      |      |      |      |      |  |      |      |      |      |      |
  *                       `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-     _______,XXXXXXX,KC_HOME,  KC_UP, KC_END,XXXXXXX,                                   _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,KC_PSCR,
+     _______,XXXXXXX,KC_HOME,  KC_UP,KC_PGUP,XXXXXXX,                                   _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,KC_PSCR,
      _______,KC_LCTL,GUI_LFT,SFT_DWN,ALT_RGT,XXXXXXX,                                   _______, ALT_F5, SFT_F6, GUI_F7, CTL_F8,SFT_INS,
-     _______,XXXXXXX,KC_PGDN,XXXXXXX,KC_PGUP,XXXXXXX,_______,_______,   _______,_______,_______,  KC_F9, KC_F10, KC_F11, KC_F12,KC_SCRL,
+     _______,XXXXXXX, KC_END,XXXXXXX,KC_PGDN,XXXXXXX,_______,_______,   _______,_______,_______,  KC_F9, KC_F10, KC_F11, KC_F12,KC_SCRL,
                              _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
     ),
 
@@ -233,7 +233,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Repurpose SCL(D0) and SDA(D1) pins for LED indicators.
  * Left (master) board for Layer indicators.
  * Right(slave) board for Num and Caps Lock indicators.
- * (Was unable to get Layers to indicate on the slave side. Even with 
+ * (Unable to get Layers to indicate on the slave side. Even with 
  * SPLIT_LAYER_STATE_ENABLE defined in config.h.)
  */
 void keyboard_pre_init_user(void) {
