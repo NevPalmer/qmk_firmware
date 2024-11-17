@@ -16,16 +16,26 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _QWERTY = 0,
+    _QWERTY_NEV = 0,
+    _NUMNAV_NEV,
+    _SYMBOL_NEV,
+    _FUNCTION_NEV,
+    _QWERTY,
     _NUMNAV,
     _SYMBOL,
     _FUNCTION,
 };
 
 // Aliases for readability
+#define QWERTY   DF(_QWERTY)
+#define QWTNEV  DF(_QWERTY_NEV)
+
 #define SYMBOL   TT(_SYMBOL)
 #define NUMNAV   TG(_NUMNAV)
 #define FKEYS    MO(_FUNCTION)
+#define SYMNEV   TT(_SYMBOL_NEV)
+#define NUMNEV   TG(_NUMNAV_NEV)
+#define FKYNEV   MO(_FUNCTION)
 
 #define SFT_ESC MT(MOD_LSFT, KC_ESC)
 
@@ -33,12 +43,21 @@ enum layers {
 #define NUM_DEL LT(_NUMNAV, KC_DEL)
 #define NUM_BSP LT(_NUMNAV, KC_BSPC)
 #define SYM_SPC LT(_SYMBOL, KC_SPC)
+#define NUM_D_N LT(_NUMNAV_NEV, KC_DEL)
+#define NUM_B_N LT(_NUMNAV_NEV, KC_BSPC)
+#define SYM_S_N LT(_SYMBOL_NEV, KC_SPC)
 
 // For QWERTY layer
 #define CTL_A    MT(MOD_LCTL, KC_A)
 #define GUI_S    MT(MOD_LGUI, KC_S)
 #define SFT_D    MT(MOD_LSFT, KC_D)
 #define ALT_F    MT(MOD_LALT, KC_F)
+#define ALT_J    MT(MOD_LALT, KC_J)
+#define SFT_K    MT(MOD_RSFT, KC_K)
+#define GUI_L    MT(MOD_RGUI, KC_L)
+#define CTL_SC   MT(MOD_RCTL, KC_SCLN)
+
+// For QWERTY_NEV layer
 #define ALT_H    MT(MOD_LALT, KC_H)
 #define SFT_J    MT(MOD_RSFT, KC_J)
 #define GUI_K    MT(MOD_RGUI, KC_K)
@@ -50,6 +69,12 @@ enum layers {
 #define GUI_P4   MT(MOD_LGUI, KC_P4)
 #define SFT_P5   MT(MOD_LSFT, KC_P5)
 #define ALT_P6   MT(MOD_LALT, KC_P6)
+#define ALT_DWN  MT(MOD_LALT, KC_DOWN)
+#define SFT_UP   MT(MOD_RSFT, KC_UP)
+#define GUI_RGT  MT(MOD_RGUI, KC_RGHT)
+#define CTL_VLD  MT(MOD_RCTL, KC_VOLD)
+
+// For NUMNAV_NEV layer
 #define ALT_LFT  MT(MOD_LALT, KC_LEFT)
 #define SFT_DWN  MT(MOD_RSFT, KC_DOWN)
 #define GUI_UP   MT(MOD_RGUI, KC_UP)
@@ -61,6 +86,11 @@ enum layers {
 #define GUI_HSH  MT(MOD_LGUI, KC_HASH)
 #define SFT_PRC  MT(MOD_LSFT, KC_PERC)
 #define ALT_CRC  MT(MOD_LALT, KC_CIRC)
+#define ALT_RBR  MT(MOD_LALT, KC_RBRC)
+#define SFT_LPN  MT(MOD_LSFT, KC_LPRN)
+#define GUI_RPN  MT(MOD_RGUI, KC_RPRN)
+
+// For SYMBOL_NEV layer
 #define ALT_LBR  MT(MOD_LALT, KC_LBRC)
 #define SFT_RBR  MT(MOD_LSFT, KC_RBRC)
 #define GUI_LPN  MT(MOD_RGUI, KC_LPRN)
@@ -127,40 +157,83 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * Base Layer: QWERTY
  *
- * ,-------------------------------------------.                              ,------------------------------------------.
- * |  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |      |   Y  |   U  |   I  |   O  |    P  |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
- * |Shft/Esc| GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |      | Alt/H|Shft/J| GUI/K|Ctrl/L|Shft/;:|
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |  CTRL  |   Z  |   X  |   C  |   V  |   B  |NumNav| NumLk|  |CapsLk|NumNav|      |   N  |   M  | ,  < | . >  |  /  ? |
- * |        |      |      |      |      |      | Lock |      |  |      | Lock |      |      |      |      |      |       |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |      |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |Shft/Esc| GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |   H  | Alt/J|Shft/K| GUI/L|Ctl/;:| Shft |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |  CTRL  |   Z  |   X  |   C  |   V  |   B  |NumNav| NumLk|  |CapsLk|NumNav|   N  |   M  | ,  < | . >  | /  ? |      |
+ * |        |      |      |      |      |      | Lock |      |  |      | Lock |      |      |      |      |      |      |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        | Menu |F-Keys|NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV|F-Keys| Menu |
  *                        |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
+      KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                                      KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,XXXXXXX,
+     SFT_ESC,  CTL_A,  GUI_S,  SFT_D,  ALT_F,   KC_G,                                      KC_H,  ALT_J,  SFT_K,  GUI_L, CTL_SC,KC_RSFT,
+     KC_LCTL,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B, NUMNAV, KC_NUM,    KC_CAPS,NUMNAV,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,XXXXXXX,
+                              KC_APP, FKYNEV,NUM_BSP,SYM_SPC, KC_ENT,    KC_ENT,SYM_SPC,NUM_DEL, FKYNEV, KC_APP
+    ),
+
+/*
+ * Base Layer: QWERTY_NEV
+ *
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |  Tab   |   Q  |   W  |   E  |   R  |   T  |                              |      |   Y  |   U  |   I  |   O  |   P  |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |Shft/Esc| GUI/A| Alt/S|Ctrl/D|Shft/F|   G  |                              |      | Alt/H|Shft/J| GUI/K|Ctrl/L|Sft/;:|
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |  CTRL  |   Z  |   X  |   C  |   V  |   B  |NumNav| NumLk|  |CapsLk|NumNav|      |   N  |   M  | ,  < | . >  | /  ? |
+ * |        |      |      |      |      |      | Lock |      |  |      | Lock |      |      |      |      |      |      |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        | Menu |F-Keys|NUMNAV| SYM/ | Enter|  | Enter| SYM/ |NUMNAV|F-Keys| Menu |
+ *                        |      |      |/BkSpc| Space|      |  |      | Space| /Del |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+    [_QWERTY_NEV] = LAYOUT(
       KC_TAB,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                                   XXXXXXX,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,
      SFT_ESC,  CTL_A,  GUI_S,  SFT_D,  ALT_F,   KC_G,                                   XXXXXXX,  ALT_H,  SFT_J,  GUI_K,  CTL_L, SFT_SC,
      KC_LCTL,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B, NUMNAV, KC_NUM,    KC_CAPS,NUMNAV,XXXXXXX,   KC_N,   KC_M,KC_COMM, KC_DOT,KC_SLSH,
-                              KC_APP,  FKEYS,NUM_BSP,SYM_SPC, KC_ENT,    KC_ENT,SYM_SPC,NUM_DEL,  FKEYS, KC_APP
+                              KC_APP,  FKEYS,NUM_B_N,SYM_S_N, KC_ENT,    KC_ENT,SYM_S_N,NUM_D_N,  FKEYS, KC_APP
     ),
 
 /*
  * NUMNAV Layer: Left Numpad - Right Navigation
  *
- * ,-------------------------------------------.                              ,------------------------------------------.
- * |        |   *  |   7  |   8  |   9  |   +  |                              |      | Break|M Prev|M Play|M Next| VolUp |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
- * |        |Ctrl//| GUI/4|Shft/5| Alt/6|   -  |                              |      | Alt/←|Shft/↓| GUI/↑|Ctrl/→|  Shft/|
- * |        |      |      |      |      |      |                              |      |      |      |      |      |  VolDn|
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |        |   0  |   1  |   2  |   3  |   .  |      |      |  |      |      |      | Home | PgDn | PgUp |  End | VolMut|
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |        |   *  |   7  |   8  |   9  |   +  |                              | Break|M Prev|M Play|M Next|VolUp |      |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |        |Ctrl//| GUI/4|Shft/5| Alt/6|   -  |                              |   ←  | Alt/↓|Shft/↑| GUI/→| Ctrl/|      |
+ * |        |      |      |      |      |      |                              |      |      |      |      | VolDn|      |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |        |   0  |   1  |   2  |   3  |   .  |      |      |  |      |      | Home | PgDn | PgUp |  End |VolMut|      |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NUMNAV] = LAYOUT(
+     _______,KC_PAST,  KC_P7,  KC_P8,  KC_P9,KC_PPLS,                                   KC_BRK ,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,_______,
+     _______,CTL_SLS, GUI_P4, SFT_P5, ALT_P6,KC_PMNS,                                   KC_LEFT,ALT_DWN, SFT_UP,GUI_RGT,CTL_VLD,_______,
+     _______,  KC_P0,  KC_P1,  KC_P2,  KC_P3,KC_PDOT,_______,_______,   _______,_______,KC_HOME,KC_PGDN,KC_PGUP, KC_END,KC_MUTE,_______,
+                             _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
+    ),
+
+/*
+ * NUMNAV_NEV Layer: Left Numpad - Right Navigation
+ *
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |        |   *  |   7  |   8  |   9  |   +  |                              |      | Break|M Prev|M Play|M Next|VolUp |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |        |Ctrl//| GUI/4|Shft/5| Alt/6|   -  |                              |      | Alt/←|Shft/↓| GUI/↑|Ctrl/→|  Sft/|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      | VolDn|
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |        |   0  |   1  |   2  |   3  |   .  |      |      |  |      |      |      | Home | PgDn | PgUp |  End |VolMut|
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+    [_NUMNAV_NEV] = LAYOUT(
      _______,KC_PAST,  KC_P7,  KC_P8,  KC_P9,KC_PPLS,                                   _______,KC_BRK ,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,
      _______,CTL_SLS, GUI_P4, SFT_P5, ALT_P6,KC_PMNS,                                   _______,ALT_LFT,SFT_DWN, GUI_UP,CTL_RGT,SFT_VLD,
      _______,  KC_P0,  KC_P1,  KC_P2,  KC_P3,KC_PDOT,_______,_______,   _______,_______,_______,KC_HOME,KC_PGDN,KC_PGUP, KC_END,KC_MUTE,
@@ -170,31 +243,52 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
  * SYMBOL Layer: Symbols
  *
- * ,-------------------------------------------.                              ,------------------------------------------.
- * |    `   |   `  |   &  |   *  |      |   +  |                              |      |      |   "  |   '  |      |       |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
- * |        |Ctrl/~| GUI/#|Shft/%| Alt/^|   -  |                              |      | Alt/[|Shft/]| GUI/(|Ctrl/)|Shft/' |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |        |   _  |   !  |   @  |   $  |   =  |      |      |  |      |      |      |      |  |   |  {   |  }   |   \   |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |    `   |   `  |   &  |   *  |      |   +  |                              |      |   "  |   '  |      |      |      |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |        |Ctrl/~| GUI/#|Shft/%| Alt/^|   -  |                              |   [  | Alt/]|Shft/(| GUI/)| Ctrl |      |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |        |   _  |   !  |   @  |   $  |   =  |      |      |  |      |      |      |  |   |  {   |  }   |  \   |      |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |NUMNAV|      |      |  |      |      |NUMNAV|      |      |
  *                        |      |      | /Del |      |      |  |      |      |/BkSpc|      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_SYMBOL] = LAYOUT(
+     _______, KC_GRV,KC_AMPR,KC_ASTR,XXXXXXX,KC_PLUS,                                   XXXXXXX,KC_DQUO,KC_QUOT,XXXXXXX,XXXXXXX,_______,
+     _______,CTL_TLD,GUI_HSH,SFT_PRC,ALT_CRC,KC_MINS,                                   KC_LBRC,ALT_RBR,SFT_LPN,GUI_RPN,KC_RCTL,_______,
+     _______,KC_UNDS,KC_EXLM, KC_AT , KC_DLR, KC_EQL,_______,_______,   _______,_______,XXXXXXX,KC_PIPE,KC_LCBR,KC_RCBR,KC_BSLS,_______,
+                             _______,_______,NUM_DEL,_______,_______,   _______,_______,NUM_BSP,_______,_______
+   ),
+
+/*
+ * SYMBOL_NEV Layer: Symbols
+ *
+ * ,-------------------------------------------.                              ,-----------------------------------------.
+ * |    `   |   `  |   &  |   *  |      |   +  |                              |      |      |   "  |   '  |      |      |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |        |Ctrl/~| GUI/#|Shft/%| Alt/^|   -  |                              |      | Alt/[|Shft/]| GUI/(|Ctrl/)| Shft |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |        |   _  |   !  |   @  |   $  |   =  |      |      |  |      |      |      |      |  |   |  {   |  }   |  \   |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        |      |      |NUMNAV|      |      |  |      |      |NUMNAV|      |      |
+ *                        |      |      | /Del |      |      |  |      |      |/BkSpc|      |      |
+ *                        `----------------------------------'  `----------------------------------'
+ */
+    [_SYMBOL_NEV] = LAYOUT(
      _______, KC_GRV,KC_AMPR,KC_ASTR,XXXXXXX,KC_PLUS,                                   _______,XXXXXXX,KC_DQUO,KC_QUOT,XXXXXXX,XXXXXXX,
      _______,CTL_TLD,GUI_HSH,SFT_PRC,ALT_CRC,KC_MINS,                                   _______,ALT_LBR,SFT_RBR,GUI_LPN,CTL_RPN,KC_RSFT,
      _______,KC_UNDS,KC_EXLM, KC_AT , KC_DLR, KC_EQL,_______,_______,   _______,_______,_______,XXXXXXX,KC_PIPE,KC_LCBR,KC_RCBR,KC_BSLS,
-                             _______,_______,NUM_DEL,_______,_______,   _______,_______,NUM_BSP,_______,_______
+                             _______,_______,NUM_D_N,_______,_______,   _______,_______,NUM_B_N,_______,_______
    ),
 
 /*
  * Function Layer: Function keys
  *
  * ,------------------------------------------.                              ,------------------------------------------.
- * |       |      | Home |   ↑  | PgUp |      |                              |      |  F1  |  F2  |  F3  |  F4  | PrtScr|
+ * |       |      | Home |   ↑  | PgUp |      |                              |QWERTY|  F1  |  F2  |  F3  |  F4  | PrtScr|
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+-------|
- * |       | Ctrl | GUI/←|Shft/↓| Alt/→|      |                              |      |Alt/F5|Sft/F6|GUI/F7|Ctl/F8|Sft/Ins|
+ * |       | Ctrl | GUI/←|Shft/↓| Alt/→|      |                              |QWTNev|Alt/F5|Sft/F6|GUI/F7|Ctl/F8|Sft/Ins|
  * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
  * |       |      |  End |      | PgDn |      |      |      |  |      |      |      |  F9  |  F10 |  F11 |  F12 | ScrLk |
  * `---------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
@@ -202,8 +296,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                       `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-     _______,XXXXXXX,KC_HOME,  KC_UP,KC_PGUP,XXXXXXX,                                   _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,KC_PSCR,
-     _______,KC_LCTL,GUI_LFT,SFT_DWN,ALT_RGT,XXXXXXX,                                   _______, ALT_F5, SFT_F6, GUI_F7, CTL_F8,SFT_INS,
+     _______,XXXXXXX,KC_HOME,  KC_UP,KC_PGUP,XXXXXXX,                                    QWERTY,  KC_F1,  KC_F2,  KC_F3,  KC_F4,KC_PSCR,
+     _______,KC_LCTL,GUI_LFT,SFT_DWN,ALT_RGT,XXXXXXX,                                    QWTNEV, ALT_F5, SFT_F6, GUI_F7, CTL_F8,SFT_INS,
+     _______,XXXXXXX, KC_END,XXXXXXX,KC_PGDN,XXXXXXX,_______,_______,   _______,_______,_______,  KC_F9, KC_F10, KC_F11, KC_F12,KC_SCRL,
+                             _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
+    ),
+
+    [_FUNCTION_NEV] = LAYOUT(
+     _______,XXXXXXX,KC_HOME,  KC_UP,KC_PGUP,XXXXXXX,                                    QWERTY,  KC_F1,  KC_F2,  KC_F3,  KC_F4,KC_PSCR,
+     _______,KC_LCTL,GUI_LFT,SFT_DWN,ALT_RGT,XXXXXXX,                                    QWTNEV, ALT_F5, SFT_F6, GUI_F7, CTL_F8,SFT_INS,
      _______,XXXXXXX, KC_END,XXXXXXX,KC_PGDN,XXXXXXX,_______,_______,   _______,_______,_______,  KC_F9, KC_F10, KC_F11, KC_F12,KC_SCRL,
                              _______,_______,_______,_______,_______,   _______,_______,_______,_______,_______
     ),
@@ -211,13 +312,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // /*
 //  * Layer template
 //  *
-//  * ,-------------------------------------------.                              ,-------------------------------------------.
-//  * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
-//  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-//  * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
-//  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-//  * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
-//  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+//  * ,-------------------------------------------.                              ,------------------------------------------.
+//  * |        |      |      |      |      |      |                              |      |      |      |      |      |       |
+//  * |--------+------+------+------+------+------|                              |------+------+------+------+------+-------|
+//  * |        |      |      |      |      |      |                              |      |      |      |      |      |       |
+//  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
+//  * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |       |
+//  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
 //  *                        |      |      |      |      |      |  |      |      |      |      |      |
 //  *                        `----------------------------------'  `----------------------------------'
 //  */
@@ -257,6 +358,22 @@ layer_state_t layer_state_set_user(layer_state_t layer_state) {
                 gpio_write_pin_low(D1);
                 break;
             case _FUNCTION:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_high(D1);
+                break;
+            case _QWERTY_NEV:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _NUMNAV_NEV:
+                gpio_write_pin_high(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _SYMBOL_NEV:
+                gpio_write_pin_low(D0);
+                gpio_write_pin_low(D1);
+                break;
+            case _FUNCTION_NEV:
                 gpio_write_pin_low(D0);
                 gpio_write_pin_high(D1);
                 break;

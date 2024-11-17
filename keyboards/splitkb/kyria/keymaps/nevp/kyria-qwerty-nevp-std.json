@@ -1,0 +1,499 @@
+[
+  {
+    "backcolor": "#ffffff",
+    "name": "Kyria-QWERTY-NevP-Std",
+    "author": "Neville Palmer",
+    "radii": "40px",
+    "plate": true
+  },
+  [
+    {
+      "ry": 8.175,
+      "y": -7.925000000000001,
+      "x": 3,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        6
+      ]
+    },
+    "E\n8\n<i class='fa fa-arrow-up'></i>\n*",
+    {
+      "x": 9
+    },
+    "I\n<i class='kb kb-Multimedia-Play'></i>\nF2\n'"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "W\n7\nHm\n&",
+    {
+      "x": 1,
+      "t": "#000000\n#0777dd\n#02a102"
+    },
+    "R\n9\nPgU",
+    {
+      "x": 7,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        6
+      ]
+    },
+    "U\n<i class='kb kb-Multimedia-Rewind-Start'></i>\nF1\n\"",
+    {
+      "x": 1,
+      "t": "#000000\n#0777dd\n#02a102"
+    },
+    "O\n<i class='kb kb-Multimedia-FastForward-End'></i>\nF3"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        5,
+        0,
+        5
+      ]
+    },
+    "T\n+\n\n+",
+    {
+      "x": 5,
+      "t": "#000000\n#0777dd\n#02a102",
+      "fa": [
+        5,
+        2
+      ]
+    },
+    "Y\nBrk\nStd"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 7,
+      "t": "#000000\n#0777dd\n\n#aa0000\n\n\n\n#02a102",
+      "fa": [
+        5,
+        4,
+        0,
+        4,
+        0,
+        0,
+        4,
+        4,
+        4
+      ],
+      "w": 3,
+      "h": 1.5
+    },
+    "\nNum/Nav\n\nSymbols\nModifier when Held\n\nQWERTY\nFunction\nLEGEND"
+  ],
+  [
+    {
+      "y": -0.75,
+      "t": "#000000"
+    },
+    "<i class='kb kb-Tab-1'></i>",
+    {
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        6,
+        0,
+        6
+      ]
+    },
+    "Q\n*\n\n`",
+    {
+      "x": 13,
+      "t": "#000000\n#0777dd\n#02a102",
+      "fa": [
+        5,
+        4
+      ]
+    },
+    "P\n<i class='kb kb-Multimedia-Volume-Up-2'></i>\nF4",
+    {
+      "t": "#000000\n\n#02a102\n\n\n\n\n#02a102",
+      "fa": [
+        5,
+        4,
+        2
+      ]
+    },
+    "\n\nPrt\n\n\n\n\nSc"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "D\n5\n<i class='fa fa-arrow-down'></i>\n%\nShift",
+    {
+      "x": 9,
+      "fa": [
+        5,
+        0,
+        0,
+        4
+      ]
+    },
+    "K\n<i class='fa fa-arrow-up'></i>\nF6\n(\nShift"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "S\n4\n<i class='fa fa-arrow-left'></i>\n#\nGUI",
+    {
+      "x": 1,
+      "n": true
+    },
+    "F\n6\n<i class='fa fa-arrow-right'></i>\n^\nAlt",
+    {
+      "x": 7,
+      "fa": [
+        5,
+        0,
+        0,
+        4
+      ],
+      "n": true
+    },
+    "J\n<i class='fa fa-arrow-down'></i>\nF5\n]\nAlt",
+    {
+      "x": 1
+    },
+    "L\n<i class='fa fa-arrow-right'></i>\nF7\n)\nGUI"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        5,
+        0,
+        5
+      ]
+    },
+    "G\n-\n\n-",
+    {
+      "x": 5,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
+      "fa": [
+        5
+      ]
+    },
+    "H\n<i class='fa fa-arrow-left'></i>\nNev\n["
+  ],
+  [
+    {
+      "y": -0.625,
+      "t": "#000000"
+    },
+    "Esc\n\n\n\nShift",
+    {
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "A\n/\n\n~\nCtrl",
+    {
+      "x": 13,
+      "t": "#000000\n#0777dd\n#02a102"
+    },
+    ";:\n<i class='kb kb-Multimedia-Volume-Down-2'></i>\nF8\n\nCtrl",
+    {
+      "t": "#000000\n\n#02a102",
+      "fa": [
+        5,
+        4,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
+      ]
+    },
+    "\n\nIns\n\nShift\n\n\n\n\nShift"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3,
+      "t": "#000000\n#0777dd\n\n#aa0000"
+    },
+    "C\n2\n\n@",
+    {
+      "x": 9,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
+      "fa": [
+        5,
+        2,
+        0,
+        4
+      ]
+    },
+    ",<\nPgU\nF10\n{"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "X\n1\nEnd\n!",
+    {
+      "x": 1
+    },
+    "V\n3\nPgD\n$",
+    {
+      "x": 7,
+      "fa": [
+        5,
+        2,
+        0,
+        4
+      ]
+    },
+    "M\nPgD\nF9\n|",
+    {
+      "x": 1
+    },
+    ".>\nEnd\nF11\n}"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "B\n.\n\n=",
+    {
+      "x": 5,
+      "t": "#000000\n#0777dd",
+      "fa": [
+        5,
+        2
+      ]
+    },
+    "N\nHm"
+  ],
+  [
+    {
+      "y": -0.625,
+      "t": "#000000"
+    },
+    "Ctrl",
+    {
+      "t": "#000000\n#0777dd\n\n#aa0000",
+      "fa": [
+        5,
+        4,
+        0,
+        4
+      ]
+    },
+    "Z\n0\n\n_",
+    {
+      "x": 13,
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000"
+    },
+    "/?\n<i class='kb kb-Multimedia-Mute-2'></i>\nF12\n\\",
+    {
+      "t": "#000000\n\n#02a102\n\n\n\n\n#02a102",
+      "fa": [
+        5,
+        4,
+        2
+      ]
+    },
+    "\n\nScr\n\n\n\n\nLk"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 2.5,
+      "t": "#000000",
+      "a": 7
+    },
+    "<i class='fa fa-bars'></i>\n\n\n\nMenu",
+    {
+      "x": 10
+    },
+    "<i class='fa fa-bars'></i>\n\n\n\nMenu"
+  ],
+  [
+    {
+      "rx": 4,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#02a102",
+      "fa": [
+        4
+      ]
+    },
+    "FKys"
+  ],
+  [
+    {
+      "rx": 13,
+      "y": -4.675000000000001,
+      "x": -0.5
+    },
+    "FKys"
+  ],
+  [
+    {
+      "r": 15,
+      "rx": 4,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#000000\n\n\n#aa0000\n#0777dd",
+      "a": 4,
+      "fa": [
+        5
+      ]
+    },
+    "<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>\n\n\nDel\nNm/Nv"
+  ],
+  [
+    {
+      "r": 30,
+      "y": -2,
+      "x": -0.5,
+      "t": "#0777dd",
+      "a": 7,
+      "f": 3
+    },
+    "NmNv Lock"
+  ],
+  [
+    {
+      "x": -0.5,
+      "t": "#000000\n\n\n\n#aa0000",
+      "f": 3
+    },
+    "Space\n\n\n\nSYM"
+  ],
+  [
+    {
+      "r": 45,
+      "y": -2,
+      "x": -0.5,
+      "t": "#000000",
+      "f": 3
+    },
+    "Num Lock"
+  ],
+  [
+    {
+      "x": -0.5,
+      "fa": [
+        6
+      ]
+    },
+    "<i class='kb kb-Return-2'></i>"
+  ],
+  [
+    {
+      "r": -45,
+      "rx": 13,
+      "y": -5.675000000000001,
+      "x": -0.5
+    },
+    "Caps Lock"
+  ],
+  [
+    {
+      "x": -0.5,
+      "fa": [
+        6
+      ]
+    },
+    "<i class='kb kb-Return-2'></i>"
+  ],
+  [
+    {
+      "r": -30,
+      "y": -2,
+      "x": -0.5,
+      "t": "#0777dd",
+      "f": 3
+    },
+    "NmNv Lock"
+  ],
+  [
+    {
+      "x": -0.5,
+      "t": "#000000\n\n\n\n#aa0000",
+      "f": 3
+    },
+    "Space\n\n\n\nSYM"
+  ],
+  [
+    {
+      "r": -15,
+      "y": -1,
+      "x": -0.5,
+      "t": "#000000\n\n\n#aa0000\n#0777dd",
+      "a": 4,
+      "fa": [
+        4,
+        0,
+        0,
+        5
+      ]
+    },
+    "Del\n\n\n<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>\nNm/Nv"
+  ]
+]
