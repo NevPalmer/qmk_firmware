@@ -106,11 +106,16 @@
   [
     {
       "y": -0.75,
-      "t": "#000000"
+      "t": "#000000",
+      "a": 7,
+      "fa": [
+        6
+      ]
     },
     "<i class='kb kb-Tab-1'></i>",
     {
       "t": "#000000\n#0777dd\n\n#aa0000",
+      "a": 4,
       "fa": [
         5,
         6,
@@ -173,7 +178,7 @@
         4
       ]
     },
-    "S\n4\n<i class='fa fa-arrow-left'></i>\n#\nGUI",
+    "S\n4\n<i class='fa fa-arrow-left'></i>\n#\nCtrl",
     {
       "x": 1,
       "n": true
@@ -193,7 +198,7 @@
     {
       "x": 1
     },
-    "L\n<i class='fa fa-arrow-right'></i>\nF7\n)\nGUI"
+    "L\n<i class='fa fa-arrow-right'></i>\nF7\n)\nCtrl"
   ],
   [
     {
@@ -220,11 +225,13 @@
   [
     {
       "y": -0.625,
-      "t": "#000000"
+      "t": "#000000",
+      "a": 7
     },
     "Esc\n\n\n\nShift",
     {
       "t": "#000000\n#0777dd\n\n#aa0000",
+      "a": 4,
       "fa": [
         5,
         4,
@@ -232,12 +239,12 @@
         4
       ]
     },
-    "A\n/\n\n~\nCtrl",
+    "A\n/\n\n~",
     {
       "x": 13,
       "t": "#000000\n#0777dd\n#02a102"
     },
-    ";:\n<i class='kb kb-Multimedia-Volume-Down-2'></i>\nF8\n\nCtrl",
+    ";:\n<i class='kb kb-Multimedia-Volume-Down-2'></i>\nF8",
     {
       "t": "#000000\n\n#02a102",
       "fa": [
@@ -331,11 +338,13 @@
   [
     {
       "y": -0.625,
-      "t": "#000000"
+      "t": "#000000",
+      "a": 7
     },
     "Ctrl",
     {
       "t": "#000000\n#0777dd\n\n#aa0000",
+      "a": 4,
       "fa": [
         5,
         4,
@@ -354,10 +363,17 @@
       "fa": [
         5,
         4,
-        2
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
       ]
     },
-    "\n\nScr\n\n\n\n\nLk"
+    "\n\nScr Lk\n\nCtrl\n\n\n\n\nCtrl"
   ],
   [
     {
@@ -366,11 +382,11 @@
       "t": "#000000",
       "a": 7
     },
-    "<i class='fa fa-bars'></i>\n\n\n\nMenu",
+    "<i class='fa fa-bars'></i>\n\n\n\nGUI",
     {
       "x": 10
     },
-    "<i class='fa fa-bars'></i>\n\n\n\nMenu"
+    "<i class='fa fa-bars'></i>\n\n\n\nGUI"
   ],
   [
     {

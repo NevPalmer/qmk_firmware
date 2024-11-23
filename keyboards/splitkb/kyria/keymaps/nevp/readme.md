@@ -1,5 +1,11 @@
 # Nev's Kyria Keymap
 
+## Standard QWERTY Layout
+
+![KLE render of the default Kyria keymap with QWERTY as the base layer. Layers are shown in sublegends.](./kyria-qwerty-nevp-std.png)
+
+## Nev's modified QWERTY Layout
+
 ![KLE render of the default Kyria keymap with QWERTY as the base layer. Layers are shown in sublegends.](./kyria-qwerty-nevp-shiftright.png)
 
 The default keymap contains 6 layers which allows it to include all keys found on an ANSI layout TKL keyboard plus media keys.
