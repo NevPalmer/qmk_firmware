@@ -178,7 +178,7 @@
         4
       ]
     },
-    "S\n4\n<i class='fa fa-arrow-left'></i>\n#\nCtrl",
+    "S\n4\n<i class='fa fa-arrow-left'></i>\n$\nCtrl",
     {
       "x": 1,
       "n": true
@@ -296,7 +296,7 @@
     {
       "x": 1
     },
-    "V\n3\nPgD\n$",
+    "V\n3\nPgD\n#",
     {
       "x": 7,
       "fa": [
@@ -359,7 +359,7 @@
     },
     "/?\n<i class='kb kb-Multimedia-Mute-2'></i>\nF12\n\\",
     {
-      "t": "#000000\n\n#02a102\n\n\n\n\n#02a102",
+      "t": "#000000\n\n#02a102",
       "fa": [
         5,
         4,
@@ -465,16 +465,14 @@
       "r": -45,
       "rx": 13,
       "y": -5.675000000000001,
-      "x": -0.5
+      "x": -0.5,
+      "f": 3
     },
     "Caps Lock"
   ],
   [
     {
-      "x": -0.5,
-      "fa": [
-        6
-      ]
+      "x": -0.5
     },
     "<i class='kb kb-Return-2'></i>"
   ],
