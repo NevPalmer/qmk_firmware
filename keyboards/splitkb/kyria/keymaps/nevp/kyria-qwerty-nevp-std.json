@@ -155,7 +155,7 @@
         4
       ]
     },
-    "D\n5\n<i class='fa fa-arrow-down'></i>\n%\nShift",
+    "D\n5\n<i class='fa fa-arrow-down'></i>\n%",
     {
       "x": 9,
       "fa": [
@@ -165,7 +165,7 @@
         4
       ]
     },
-    "K\n<i class='fa fa-arrow-up'></i>\nF6\n(\nShift"
+    "K\n<i class='fa fa-arrow-up'></i>\nF6\n("
   ],
   [
     {
@@ -178,12 +178,12 @@
         4
       ]
     },
-    "S\n4\n<i class='fa fa-arrow-left'></i>\n$\nCtrl",
+    "S\n4\n<i class='fa fa-arrow-left'></i>\n$",
     {
       "x": 1,
       "n": true
     },
-    "F\n6\n<i class='fa fa-arrow-right'></i>\n^\nAlt",
+    "F\n6\n<i class='fa fa-arrow-right'></i>\n^",
     {
       "x": 7,
       "fa": [
@@ -194,11 +194,11 @@
       ],
       "n": true
     },
-    "J\n<i class='fa fa-arrow-down'></i>\nF5\n]\nAlt",
+    "J\n<i class='fa fa-arrow-down'></i>\nF5\n]",
     {
       "x": 1
     },
-    "L\n<i class='fa fa-arrow-right'></i>\nF7\n)\nCtrl"
+    "L\n<i class='fa fa-arrow-right'></i>\nF7\n)"
   ],
   [
     {
@@ -228,9 +228,9 @@
       "t": "#000000",
       "a": 7
     },
-    "Esc\n\n\n\nShift",
+    "Esc\n\n\n\nAlt",
     {
-      "t": "#000000\n#0777dd\n\n#aa0000",
+      "t": "#000000\n#0777dd\n#02a102\n#aa0000",
       "a": 4,
       "fa": [
         5,
@@ -239,7 +239,7 @@
         4
       ]
     },
-    "A\n/\n\n~",
+    "A\n/\nShft\n~",
     {
       "x": 13,
       "t": "#000000\n#0777dd\n#02a102"
@@ -260,7 +260,7 @@
         5
       ]
     },
-    "\n\nIns\n\nShift\n\n\n\n\nShift"
+    "\n\nIns\n\nAlt\n\n\n\n\nAlt"
   ],
   [
     {
@@ -341,7 +341,7 @@
       "t": "#000000",
       "a": 7
     },
-    "Ctrl",
+    "Shift",
     {
       "t": "#000000\n#0777dd\n\n#aa0000",
       "a": 4,
@@ -373,7 +373,7 @@
         5
       ]
     },
-    "\n\nScr Lk\n\nCtrl\n\n\n\n\nCtrl"
+    "\n\nScr Lk\n\nShft\n\n\n\n\nShift"
   ],
   [
     {
@@ -458,7 +458,7 @@
         6
       ]
     },
-    "<i class='kb kb-Return-2'></i>"
+    "<i class='kb kb-Return-2'></i>\n\n\n\nCtrl"
   ],
   [
     {
@@ -474,7 +474,7 @@
     {
       "x": -0.5
     },
-    "<i class='kb kb-Return-2'></i>"
+    "<i class='kb kb-Return-2'></i>\n\n\n\nCtrl"
   ],
   [
     {
